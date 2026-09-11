@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Off Book Studios — Production resourcing, creative production, localization, line production</title>
+<meta name="description" content="Off Book Studios staffs it, produces it, localizes it, and budgets it — across 150 territories — so you can focus on the project at hand.">
+<link rel="canonical" href="https://offbookstudios.com/">
+<meta name="theme-color" content="#2C3A3B">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Off Book Studios">
+<meta property="og:title" content="Off Book Studios — We produce it. We localize it. We deliver it. You run the show.">
+<meta property="og:description" content="Production resourcing, creative production, localization, and line production for studios, networks, streamers, and agencies — across 150 territories.">
+<meta property="og:url" content="https://offbookstudios.com/">
+<meta property="og:image" content="https://offbookstudios.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Off Book Studios">
+<meta name="twitter:description" content="Production resourcing, creative production, localization, and line production — across 150 territories.">
+<meta name="twitter:image" content="https://offbookstudios.com/assets/og-image.png">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800;900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2C3A3B;
+    --ink-deep:#1F2A2B;
+    --paper:#F4F3EF;
+    --white:#FFFFFF;
+    --orange:#E9790D;
+    --mute:#6E7A7B;
+    --mute-on-ink:#A9B4B4;
+    --rule:rgba(44,58,59,.18);
+    --rule-on-ink:rgba(244,243,239,.16);
+    --display:"Archivo",system-ui,sans-serif;
+    --mono:"Courier Prime","Courier New",monospace;
+    --gutter:clamp(20px,5vw,72px);
+    --measure:62ch;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--mono);font-size:17px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+  h1,h2,h3{font-family:var(--display);font-weight:900;line-height:.98;letter-spacing:-.02em;margin:0}
+  p{margin:0}
+  ul,ol{list-style:none;margin:0;padding:0}
+  .wrap{padding-left:var(--gutter);padding-right:var(--gutter);max-width:1360px;margin:0 auto}
+
+  /* ---------- logo ---------- */
+  .logo{display:inline-flex;align-items:center;line-height:0}
+  .logo img{height:42px;width:auto;display:block}
+  .logo-foot img{height:52px}
+  @media (max-width:820px){.logo img{height:36px}}
+
+  /* ---------- marker stroke motif ---------- */
+  .hl{position:relative;display:inline-block;isolation:isolate}
+  .hl::before{
+    content:"";position:absolute;z-index:-1;left:-.12em;right:-.14em;top:.14em;bottom:.02em;
+    background:var(--orange);filter:url(#rough);transform:rotate(-.6deg);
+    mix-blend-mode:multiply;
+  }
+  .on-ink .hl::before{mix-blend-mode:normal}
+  .hl.wipe::before{transform-origin:left center;transform:scaleX(0) rotate(-.6deg);transition:transform .55s cubic-bezier(.2,.9,.2,1)}
+  .hl.wipe.in::before{transform:scaleX(1) rotate(-.6deg)}
+
+  /* ---------- torn edges between paper and ink ---------- */
+  .tear{height:34px;position:relative;overflow:hidden}
+  .tear::before{content:"";position:absolute;left:-40px;right:-40px;top:-30px;height:46px;background:var(--ink);filter:url(#rough-big)}
+  .tear.up::before{top:auto;bottom:-30px}
+
+  /* ---------- nav ---------- */
+  .nav{position:sticky;top:0;z-index:20;background:rgba(244,243,239,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .nav ul{display:flex;gap:clamp(14px,2.5vw,34px);font-size:14px}
+  .nav ul a{text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px}
+  .nav ul a:hover{border-color:var(--orange)}
+  .btn{display:inline-block;font-family:var(--mono);font-weight:700;font-size:15px;text-decoration:none;padding:12px 20px;border:2px solid var(--ink);background:var(--ink);color:var(--paper);white-space:nowrap}
+  .btn:hover{background:var(--orange);border-color:var(--orange);color:var(--ink-deep)}
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .on-ink .btn{background:var(--orange);border-color:var(--orange);color:var(--ink-deep)}
+  .on-ink .btn:hover{background:var(--paper);border-color:var(--paper)}
+  .on-ink .btn.ghost{background:transparent;color:var(--paper);border-color:var(--paper)}
+  .on-ink .btn.ghost:hover{background:var(--paper);color:var(--ink)}
+  .nav .menu-btn{display:none}
+  @media (max-width:820px){
+    .nav ul{display:none}
+    .nav .cta-nav{display:none}
+    .nav .menu-btn{display:inline-block;font:inherit;background:none;border:0;padding:6px 0;cursor:pointer;font-weight:700}
+    .nav.open ul{display:flex;flex-direction:column;position:absolute;left:0;right:0;top:74px;background:var(--paper);padding:20px var(--gutter) 28px;border-bottom:1px solid var(--rule);gap:16px;font-size:17px}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;padding:clamp(56px,9vw,120px) 0 clamp(64px,8vw,110px)}
+  .wm{position:absolute;pointer-events:none;user-select:none;font-family:var(--mono);font-weight:700;color:var(--ink);opacity:.045;line-height:.85;letter-spacing:-.04em;white-space:nowrap}
+  .hero .wm{font-size:clamp(160px,26vw,420px);right:-.08em;top:-.05em;text-align:right}
+  .hero .wm span{display:block}
+  .hero .wm span:nth-child(2){padding-right:1.1em}
+  .hero .wm span:nth-child(3){padding-right:.35em}
+  .hero h1{font-size:clamp(40px,6.6vw,96px);max-width:15ch;min-height:4.2em}
+  .hero h1 > span{display:block;margin-bottom:.07em}
+  .hero h1 .hl{display:inline-block}
+    .cursor{display:inline-block;width:.06em;height:.9em;background:var(--orange);vertical-align:-.08em;margin-left:.04em;animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .hero .lede{margin-top:36px;max-width:var(--measure);font-size:18px}
+  .hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+  @media (prefers-reduced-motion:reduce){.cursor{display:none}}
+
+  /* ---------- what we do index ---------- */
+  .index{padding:0 0 clamp(56px,7vw,96px)}
+  .index .rows{border-top:2px solid var(--ink)}
+  .index a.row{
+    display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) auto;gap:24px;align-items:baseline;
+    padding:30px 0;border-bottom:1px solid var(--rule);text-decoration:none;position:relative
+  }
+  .index a.row h3{font-size:clamp(26px,3.6vw,50px)}
+  .index a.row p{color:var(--mute);font-size:16px;max-width:46ch}
+  .index a.row .go{font-weight:700;font-size:15px;transition:transform .2s}
+  .index a.row:hover h3{color:var(--orange)}
+  .index a.row:hover .go{transform:translateX(6px)}
+  @media (max-width:760px){.index a.row{grid-template-columns:1fr;gap:8px}.index a.row .go{display:none}}
+
+  /* ---------- generic section ---------- */
+  section.block{padding:clamp(64px,8vw,120px) 0}
+  .on-ink{background:var(--ink);color:var(--paper)}
+  .on-ink .mute{color:var(--mute-on-ink)}
+  .mute{color:var(--mute)}
+  .kicker{display:flex;align-items:center;gap:16px;font-size:clamp(20px,2vw,26px);font-weight:700;padding-bottom:16px;border-bottom:2px solid currentColor;margin-bottom:clamp(36px,4vw,56px)}
+  .kicker::before{content:"";width:14px;height:14px;background:var(--orange);flex:none}
+  .h2{font-size:clamp(36px,5.6vw,84px);max-width:12ch}
+  .lead{font-size:clamp(20px,2.3vw,28px);line-height:1.35;max-width:32ch;font-family:var(--display);font-weight:800;letter-spacing:-.01em;margin-top:34px}
+  .body{max-width:var(--measure);margin-top:22px}
+  .split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,80px);align-items:start}
+  @media (max-width:900px){.split{grid-template-columns:1fr}}
+  .cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,56px);margin-top:56px}
+  @media (max-width:820px){.cols{grid-template-columns:1fr}}
+  .cols h3{font-size:24px;padding-bottom:14px;border-bottom:2px solid currentColor;margin-bottom:18px}
+  .cols li{padding:9px 0 9px 26px;position:relative;border-bottom:1px solid var(--rule)}
+  .on-ink .cols li{border-color:var(--rule-on-ink)}
+  .cols li::before{content:"➔";position:absolute;left:0;top:9px;color:var(--orange)}
+  .cols li:last-child{border-bottom:0}
+
+  /* ---------- creative production ---------- */
+  .formats{margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
+  @media (min-width:1100px){.formats{grid-template-columns:repeat(7,1fr)}}
+  @media (max-width:480px){.formats li{font-size:18px;padding:22px 16px 20px}}
+  .formats li{padding:26px 20px 24px;border:1px solid var(--rule-on-ink);font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-.01em}
+  .formats .ico{display:block;width:64px;height:64px;margin-bottom:22px}
+  .formats .ico svg{width:100%;height:100%;fill:none;stroke:var(--orange);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+
+  /* ---------- localization ---------- */
+  .models{margin-top:80px}
+  .models .cols h3{border-bottom-color:var(--orange)}
+  .models .cols li::before{content:"";width:8px;height:8px;background:var(--orange);top:16px;border-radius:0}
+  .models .cols li{padding-left:22px}
+
+  /* ---------- resourcing ---------- */
+  .promise{background:var(--orange);color:var(--ink-deep)}
+  .promise .kicker::before{background:var(--ink-deep)}
+  .promise .mantra{text-align:center;padding-top:clamp(12px,2vw,28px)}
+  .mantra{font-family:var(--display);font-weight:900;font-size:clamp(34px,5.4vw,80px);line-height:1;letter-spacing:-.025em;margin:0 auto}
+  .mantra > span{display:block;margin-bottom:.12em}
+  .mantra .last{color:var(--paper)}
+  .tear.orange::before{background:var(--orange)}
+  .tear.on-orange{background:var(--orange)}
+  .two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,4vw,56px);margin-top:56px}
+  @media (max-width:640px){.two{grid-template-columns:1fr}}
+  .two h3{font-size:24px;padding-bottom:14px;border-bottom:2px solid currentColor;margin-bottom:6px}
+  .two li{padding:10px 0;border-bottom:1px solid var(--rule-on-ink)}
+  .two li.big{font-family:var(--display);font-weight:900;font-size:26px;color:var(--orange);border:0;padding-top:16px}
+  .roster{margin-top:80px}
+  .roster h3{font-size:24px}
+  .roster ul{margin-top:22px;columns:4;column-gap:36px;font-size:16px}
+  .roster li{padding:5px 0;break-inside:avoid}
+  .roster .more{margin-top:26px;font-family:var(--display);font-weight:900;font-size:clamp(24px,3vw,40px);text-align:right}
+  @media (max-width:1000px){.roster ul{columns:3}}
+  @media (max-width:720px){.roster ul{columns:2}}
+
+  /* ---------- budgeting ---------- */
+  .quote{font-family:var(--display);font-weight:900;font-size:clamp(48px,9vw,140px);line-height:.95;letter-spacing:-.03em}
+  .attr{font-size:18px;margin-top:22px}
+  .services{margin-top:64px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,4vw,56px)}
+  @media (max-width:640px){.services{grid-template-columns:1fr}}
+  .services h3{font-size:24px;padding-bottom:14px;border-bottom:2px solid currentColor;margin-bottom:6px}
+  .services li{padding:12px 0;border-bottom:1px solid var(--rule);font-family:var(--display);font-weight:800;font-size:22px}
+
+  /* ---------- contact / footer ---------- */
+  .contact{position:relative;overflow:hidden}
+  .contact .wm{font-size:clamp(120px,20vw,320px);left:-.05em;bottom:-.25em;color:var(--paper);opacity:.07}
+  .contact .h2{max-width:14ch}
+  .contact .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
+  .contact .email{margin-top:28px;font-size:18px}
+  footer{background:var(--ink-deep);color:var(--mute-on-ink);font-size:14px}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;padding-top:34px;padding-bottom:34px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Off Book Studios","legalName":"Off Book Studios, LLC","url":"https://offbookstudios.com/","logo":"https://offbookstudios.com/assets/obs-logo-ink.png","email":"info@offbookstudios.com","description":"Production resourcing, creative production, localization, and line production for studios, networks, streamers, and agencies."}
+</script>
+</head>
+<body>
+
+<!-- SVG filters for the marker stroke and torn edges -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="rough" x="-5%" y="-20%" width="110%" height="140%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.035 0.09" numOctaves="3" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="9" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <filter id="rough-big" x="-2%" y="-50%" width="104%" height="200%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.012 0.06" numOctaves="4" seed="3" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="26" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Off Book Studios home"><img src="/assets/obs-logo-ink.png" alt="Off Book Studios"></a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#creative">Creative production</a></li>
+        <li><a href="#localization">Localization</a></li>
+        <li><a href="#promise">Resourcing</a></li>
+        <li><a href="#budgeting">Line production</a></li>
+      </ul>
+    </nav>
+    <a class="btn cta-nav" href="#contact">Book a discovery call</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav" onclick="toggleNav(this)">Menu</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="wm" aria-hidden="true"><span>off</span><span>book</span><span>studios</span></div>
+    <div class="wrap">
+      <h1 id="mantra" aria-label="We produce it. We localize it. We deliver it. You run the show.">
+        <span class="typed" data-text="We produce it."></span>
+        <span class="typed" data-text="We localize it."></span>
+        <span class="typed" data-text="We deliver it."></span>
+        <span class="typed last" data-text="You run the show."></span>
+      </h1>
+      <p class="lede">Off Book Studios is a production resourcing and creative production company for studios, networks, streamers, and agencies — from narrative and live events to global marketing campaigns, across 150 territories.</p>
+      <div class="actions">
+        <a class="btn" href="#contact">Book a discovery call</a>
+        <a class="btn ghost" href="#services">See what we do</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHAT WE DO ================= -->
+  <section class="index" id="services">
+    <div class="wrap">
+      <div class="rows">
+        <a class="row" href="#creative">
+          <h3>Creative production</h3>
+          <p>Full service production for narrative, reality, events, experiential, award shows, marketing, and social.</p>
+          <span class="go">Read more ↓</span>
+        </a>
+        <a class="row" href="#localization">
+          <h3>Localization services</h3>
+          <p>Production and creative adaptation of marketing assets across print, digital, social, trailers, and A/V.</p>
+          <span class="go">Read more ↓</span>
+        </a>
+        <a class="row" href="#promise">
+          <h3>Resourcing &amp; production staffing</h3>
+          <p>Hire who you want, when you want, anywhere you want — with compliance, payroll, and insurance handled.</p>
+          <span class="go">Read more ↓</span>
+        </a>
+        <a class="row" href="#budgeting">
+          <h3>Line production &amp; budgeting</h3>
+          <p>Forecasting, management, reporting, and audits, plus line producers, controllers, and UPMs.</p>
+          <span class="go">Read more ↓</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CREATIVE PRODUCTION ================= -->
+  <div class="tear" aria-hidden="true"></div>
+  <section class="block on-ink" id="creative">
+    <div class="wrap">
+      <p class="kicker">Creative production</p>
+      <h2 class="h2"><span class="hl">Full service</span> production.</h2>
+      <p class="lead">Any format. Anywhere in the world.</p>
+      <ul class="formats">
+        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M10 28h44v26H10z"/><path d="M10 28l-2-9 43-7 3 8z"/><path d="M20 21l4-7M31 19l4-7M42 17l4-7M22 40h20"/></svg></span><span>Narrative</span></li>
+        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 64 64"><rect x="8" y="22" width="32" height="24" rx="3"/><path d="M40 30l14-8v20l-14-8"/><circle cx="20" cy="34" r="5"/><path d="M28 16h8"/></svg></span><span>Reality</span></li>
+        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M8 52h48M14 52V42h36v10"/><path d="M32 8l-16 30h32z"/><path d="M30 4h4"/></svg></span><span>Events</span></li>
+        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M32 8l22 12v24L32 56 10 44V20z"/><path d="M32 32l22-12M32 32L10 20M32 32v24"/></svg></span><span>Experiential</span></li>
+        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M20 10h24v14a12 12 0 0 1-24 0z"/><path d="M20 14h-8a8 8 0 0 0 8 10M44 14h8a8 8 0 0 1-8 10M32 36v10M22 52h20M26 46h12v6H26z"/></svg></span><span>Award shows</span></li>
+        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M10 26v12h8l20 12V14L18 26z"/><path d="M42 24a10 10 0 0 1 0 16M14 38l4 12h8l-3-12"/></svg></span><span>Marketing</span></li>
+        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 64 64"><rect x="18" y="6" width="28" height="52" rx="5"/><path d="M32 42c-4-3-8-6-8-10a4 4 0 0 1 8-2 4 4 0 0 1 8 2c0 4-4 7-8 10z"/><path d="M28 12h8"/></svg></span><span>Social</span></li>
+      </ul>
+      </div>
+
+
+    </div>
+  </section>
+  <div class="tear up" aria-hidden="true"></div>
+
+  <!-- ================= LOCALIZATION ================= -->
+  <section class="block" id="localization">
+    <div class="wrap">
+      <p class="kicker">Localization services</p>
+      <div class="split">
+        <div>
+          <h2 class="h2">Production &amp; creative <span class="hl">adaptation.</span></h2>
+        </div>
+        <div>
+          <p class="lead">Translation is the easy part. The hard part is the hundreds of assets, in dozens of languages, to every spec, and only one deadline.</p>
+          <p class="body">Every version gets the same care as the original — built to your spec and checked before it ships.</p>
+        </div>
+      </div>
+
+      <div class="cols">
+        <div>
+          <h3>Print &amp; large format</h3>
+          <ul>
+            <li>OOH, cinema &amp; large-format print localization</li>
+            <li>Key art, character &amp; promotional artwork localization</li>
+            <li>Multi-size &amp; multi-format asset creation and versioning</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Digital, display &amp; social</h3>
+          <ul>
+            <li>DOOH &amp; digital display production</li>
+            <li>Web banner production &amp; versioning</li>
+            <li>Social media, platform &amp; campaign asset versioning</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Trailers, A/V &amp; motion</h3>
+          <ul>
+            <li>Motion graphics localization</li>
+            <li>End cards, title cards &amp; trailer graphics</li>
+            <li>GFX loc &amp; versioning editing for A/V deliverables</li>
+            <li>Subbing &amp; dubbing</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="models">
+        <h2 class="h2" style="font-size:clamp(30px,4vw,56px);max-width:16ch">Engagement models built to flex.</h2>
+        <div class="cols">
+          <div>
+            <h3>Project-based</h3>
+            <ul>
+              <li>Per-campaign or per-title SOW</li>
+              <li>Fixed deliverable list &amp; rate card</li>
+              <li>Built for launches, tentpoles &amp; seasonal pushes</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Embedded team</h3>
+            <ul>
+              <li>Dedicated loc pod working in your tools &amp; workflow</li>
+              <li>Monthly retainer with predictable capacity</li>
+              <li>Built for always-on social &amp; platform versioning</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Surge &amp; overflow</h3>
+            <ul>
+              <li>Burst capacity for peak weeks &amp; multi-market drops</li>
+              <li>Your in-house team stays on its priorities</li>
+              <li>Mobilize in days, adapt as the work changes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= THE PROMISE ================= -->
+  <div class="tear orange" aria-hidden="true"></div>
+  <section class="block promise" id="promise">
+    <div class="wrap">
+      <p class="kicker">Resourcing &amp; production staffing</p>
+      <h2 class="mantra"><span>Hire who you want.</span><span>When you want.</span><span>Anywhere you want.</span><span>For as long as you want.</span><span class="last">On your terms.</span></h2>
+    </div>
+  </section>
+
+  <!-- ================= RESOURCING ================= -->
+  <div class="tear on-orange" aria-hidden="true"></div>
+  <section class="block on-ink" id="resourcing">
+    <div class="wrap">
+      <div class="split">
+        <div>
+              <h2 class="h2">We handle <span class="hl">everything.</span></h2>
+        </div>
+        <div>
+          <p class="lead">So you can focus on the project at hand.</p>
+          <p class="body">We manage the deal memos, ensure domestic and international compliance, payroll, insurance, guarantee payments to resources, and handle every little detail so you don't have to worry. And we built it all in a way that allows you to scale and pivot quickly.</p>
+        </div>
+      </div>
+
+      <div class="two">
+        <div>
+          <h3>Flexible payment terms</h3>
+          <ul>
+            <li>Hourly</li><li>Daily</li><li>Weekly</li><li>Monthly</li><li>Milestone-based</li><li>Deliverable-based</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Global reach</h3>
+          <ul>
+            <li>US / Canada</li><li>EMEA</li><li>ANZ</li><li>SEA</li><li>LATAM</li>
+            <li class="big">150 territories globally</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cols">
+        <div>
+          <h3>Ongoing resourcing</h3>
+          <ul>
+            <li>Employer of record services</li>
+            <li>Long-term engagements</li>
+            <li>Non-fixed-term contracts</li>
+            <li>Ongoing consulting</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Project-based resourcing</h3>
+          <ul>
+            <li>Production staffing &amp; crewing</li>
+            <li>Short-term engagements</li>
+            <li>Revolving door model</li>
+            <li>Fixed-term contracts</li>
+            <li>Comprehensive reporting</li>
+          </ul>
+        </div>
+        <div>
+          <h3>People / FTE solutions</h3>
+          <ul>
+            <li>Employer of record</li>
+            <li>Contractor of record</li>
+            <li>Payroll services</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="roster">
+        <h3>Creative resourcing &amp; production staffing</h3>
+        <ul>
+          <li>Designers</li><li>Art directors</li><li>Creative directors</li><li>Editors</li><li>Motion graphics artists</li><li>Colorists</li><li>Audio mixers</li><li>Sound designers</li><li>Producers</li><li>Online editors</li><li>Assistant editors</li><li>QC operators</li><li>Encoders / transcoders</li><li>Tape operators</li><li>Localization producers</li><li>Translators</li><li>Transcribers</li><li>Versioning editors</li><li>Versioning designers</li><li>Camera operators</li><li>Production assistants</li><li>Photographers</li><li>Production designers</li><li>Costumers</li><li>Hair / make-up artists</li><li>Gaffers</li><li>Grips</li><li>Transportation coordinators</li>
+        </ul>
+        <p class="more">…and so much more.</p>
+      </div>
+
+    </div>
+  </section>
+  <div class="tear up" aria-hidden="true"></div>
+
+  <!-- ================= LINE PRODUCTION & BUDGETING ================= -->
+  <section class="block" id="budgeting">
+    <div class="wrap">
+      <p class="kicker">Line production &amp; budgeting services</p>
+      <p class="quote">“Budgeting <span class="hl">sucks.</span>”</p>
+      <p class="attr">~ Everyone. Ever.</p>
+      <p class="lead">Let us handle it so you can focus on the things that matter.</p>
+      <div class="services">
+        <div>
+          <h3>Services</h3>
+          <ul>
+            <li>Budget forecasting</li>
+            <li>Budget management</li>
+            <li>Budget reporting</li>
+            <li>Audits</li>
+          </ul>
+        </div>
+        <div>
+          <h3>People</h3>
+          <ul>
+            <li>Line producers</li>
+            <li>Controllers</li>
+            <li>UPMs / PMs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <div class="tear" aria-hidden="true"></div>
+  <section class="block on-ink contact" id="contact">
+    <div class="wm" aria-hidden="true">off book</div>
+    <div class="wrap">
+      <h2 class="h2">Ready to go <span class="hl">off book?</span></h2>
+      <p class="body">Tell us what you're making, where, and when. We'll come back with the people, the plan, and the number.</p>
+      <div class="actions">
+        <a class="btn" href="mailto:info@offbookstudios.com?subject=Discovery%20call">Book a discovery call</a>
+        <a class="btn ghost" href="mailto:info@offbookstudios.com?subject=Capabilities%20deck">Request the capabilities deck</a>
+      </div>
+      <p class="email">info@offbookstudios.com</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo logo-foot" href="#top" aria-label="Off Book Studios"><img src="/assets/obs-logo-white.png" alt="Off Book Studios"></a>
+    <p>Off Book Studios, LLC · Production resourcing across 150 territories</p>
+    <p>© 2026 Off Book Studios, LLC</p>
+  </div>
+</footer>
+
+<script>
+  function toggleNav(btn){
+    const nav=document.getElementById('nav');
+    const open=nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+    btn.textContent=open?'Close':'Menu';
+  }
+  document.querySelectorAll('.nav ul a').forEach(a=>a.addEventListener('click',()=>{
+    const nav=document.getElementById('nav');
+    if(nav.classList.contains('open')){nav.classList.remove('open');const b=nav.querySelector('.menu-btn');b.textContent='Menu';b.setAttribute('aria-expanded','false');}
+  }));
+
+  // Hero: type the mantra line by line, then swipe the marker across the last line.
+  (function(){
+    const lines=[...document.querySelectorAll('#mantra .typed')];
+    const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finish=()=>{
+      lines.forEach(l=>{l.textContent=l.dataset.text;l.classList.add('done');});
+      const last=lines[lines.length-1];
+      last.innerHTML='<span class="hl wipe">'+last.dataset.text+'</span>';
+      requestAnimationFrame(()=>requestAnimationFrame(()=>last.querySelector('.hl').classList.add('in')));
+    };
+    if(reduce){finish();return;}
+    let i=0;
+    const cursor=document.createElement('span');cursor.className='cursor';cursor.setAttribute('aria-hidden','true');
+    const typeLine=()=>{
+      if(i>=lines.length){cursor.remove();finish();return;}
+      const el=lines[i],text=el.dataset.text;let j=0;
+      el.appendChild(cursor);
+      const tick=()=>{
+        j++;el.textContent=text.slice(0,j);el.appendChild(cursor);
+        if(j<text.length){setTimeout(tick,34+Math.random()*40);}
+        else{el.classList.add('done');i++;setTimeout(typeLine,i===lines.length?260:200);}
+      };
+      setTimeout(tick,i===0?400:0);
+    };
+    typeLine();
+  })();
+</script>
+</body>
+</html>
