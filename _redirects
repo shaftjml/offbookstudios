@@ -1,1 +1,7 @@
-https://www.offbookstudios.com/* https://offbookstudios.com/:splat 301
+# Old Squarespace URLs -> new single-page site
+/about        /             301
+/contact      /#contact     301
+/services/*   /             301
+/cart         /             301
+
+# www -> apex is handled in the Cloudflare dashboard (Rules -> Redirect Rules -> "Redirect from WWW to root")
